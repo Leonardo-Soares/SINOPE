@@ -1,14 +1,15 @@
-## SINOPE
+# SINOPE
 Construção do site para exibir os serviços oferecidos pela SINOPE
----
 
-## Tarefas 
-O contro das tarefas desse projeto será realizado no GitHub
----
+# Tarefas 
+O controle das tarefas desse projeto será realizado no GitHub
 
 ## Ícones
 :package: nova funcionalidade
+
 :up: atualização
-:beatle: correção de bug 
+
+:heavy_exclamation_mark: correção de bug 
+
 :checkered_flag: release
 
