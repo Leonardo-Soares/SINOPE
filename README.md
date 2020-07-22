@@ -13,3 +13,5 @@ O controle das tarefas desse projeto será realizado no GitHub
 
 :checkered_flag: release
 
+:closed_book: atualização do wiki
+
