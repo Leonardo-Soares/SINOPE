@@ -5,6 +5,82 @@
 *{ /*todos elementos*/
     margin: 0; /*margens da imagem*/
     padding: 0; /* margem interna do elemento */
+    list-style: none; /*Tira as bolinhas do li*/
+    text-decoration: none; /*Tira a sublimação*/
+}
+
+:root {
+    --font-primary: "Baloo Da 2", serif;
+    --font-secundary: "Josefin Slab", serif;
+    --font-action: "Muli", serif;
+}
+
+.hamburguer { /*Div menu*/
+    width: 2rem; /*Posição*/
+    height: 2rem; /*Posição*/
+    position: fixed;
+    z-index: 100; /*Questão tridmensional*/
+    right: 2rem; /*Distancia da direita*/
+    top: 2rem; /*Distancia do top*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.show-menu .hamburguer {
+    right: 16rem;
+}
+
+.line { /*Linhas do menu*/
+    width: 100%; /*Ocupa 100% dessa div*/
+    height: .1rem; /*Altura do rem*/
+    background-color: white;
+    box-shadow: 0.1rem 0.1rem 1px #000;
+    transition: transform 1s;
+}
+
+.show-menu #line1{
+    transform: rotate(45deg) translate(.10rem, .45rem);
+}
+
+
+
+.show-menu #line2{
+    opacity: 0;
+    visibility: 0;
+}
+
+.show-menu #line3 {
+    transform: rotate(-45deg) translate(.10rem, -.50rem);
+}
+
+.hamburguer span{
+    position: absolute;
+    left: 3rem;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #11998e;
+    color: #fff;
+    font-family: var(--font-action);
+    opacity: 0;
+}
+
+.hamburguer span:before{ /*Pequeno traingulo do texto fechar*/
+    content: "";
+    position: absolute;
+    border-right: .5rem solid #11998e;
+    border-top: .5rem solid transparent;
+    border-left: .5rem solid transparent;
+    border-bottom: .5rem solid transparent;
+    left: -1rem;
+}
+
+.show-menu .hamburguer:hover span{
+    opacity: 1;
 }
 
 body {
@@ -44,14 +120,14 @@ header {
 
 .banner { /* Class dos textos da img principal */
     position: absolute; /* Precisa estar dentro de um position relativo */
-    top: 30%;
-    left: 15%;
+    top: 20%; /*Posição da img principal */
+    left: 10%; /*Posição da img principal */
 }
 
 .banner h1 {
     color: blanchedalmond; /* Cor das letras */
     font-size: 3.5rem; /* Tamanho das letras, esse lem pega o tamanho padrão dos navegadores, o número representa o quão grande eu quero que seja em relação ao tamanho padrão */
-    font-family: "Baloo Da 2", Serif; /* Tipo de fonte */
+    font-family: var(--font-primary); /* Tipo de fonte */
     font-weight: 200;
     text-shadow: .3rem .4rem  2px rgba(0, 0, 0, .4); /* Efeito nas letras */
     line-height: 3.5rem; /* Tamanho entre as linahs */
@@ -62,7 +138,7 @@ header {
 
 
 .banner p{
-    font-family: "Josefin Slab", serif; /* Tipo de fonte */
+    font-family: var(--font-secundary); /* Tipo de fonte */
     color: blanchedalmond; /* Cor das letras */
     font-size: 2rem;  /* Tamanho das letras, esse lem pega o tamanho padrão dos navegadores, o número representa o quão grande eu quero que seja em relação ao tamanho padrão */
     text-shadow: .2rem .2rem rgba(0, 0, 0, .4); /* Efeito nas letras */
@@ -72,7 +148,7 @@ header {
 }
 
 .banner button { /* estilo do butão */
-    font-family: "Muli", serif; /* Tipo de fonte */
+    font-family: var(--font-action); /* Tipo de fonte */
     color: #fff; /* Cor das letras */
     text-transform: uppercase; /* Letras em maiusculas*/
     letter-spacing: .1rem; /*Espaço entre as letras*/
@@ -102,5 +178,67 @@ header {
     }
 }
 
+/* Menu */
 
+.sidebar {
+    width: 20rem;
+    height: 100vh;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    right: -20rem; /*Menu oculto*/
+    transition: all 1s;
+}
 
+.show-menu .sidebar {
+    right: 0; 
+}
+
+.menu {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.menu-item{
+    text-align: center;
+    margin-bottom: .5rem; /*Afastamento entre linhas*/
+}
+
+.menu-link{
+    font-family: var(--font-action);
+    font-size: 2rem;
+    color:black;
+    transition: color 0.5s;
+}
+
+.menu-link:hover{
+    color: #11998e;
+}
+
+.social-media{ /*icones*/
+    position: absolute;
+    bottom: 2rem;
+    width: 100%;
+    
+    display: flex; /*Distribuir pela linha*/
+    justify-content: space-evenly; /*Espaçamento dos icones*/
+}
+
+.social-media i{
+    color: #11998e;
+    height: 2.5rem;
+    width: 2.5rem;
+    font-size: 2rem; /*Tamanho do icon*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: background-color 0.5s; /*muda de cor quado passar o mouse*/
+}
+
+.social-media i:hover{
+    background-color: #38ef7d;
+}
